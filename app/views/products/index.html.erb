@@ -2,15 +2,30 @@
 
 <div class="row">
   <div class="section">
-  <% @products.each do |product| %>
-    <div class="col s4">
+    <% @products.each do |product| %>
+      <div class="col s4">
 
-      <h4><%= product.name %></h4>
-      <p><%= product.price %></p>
-      <%= image_tag(product.image, class: "product-image") %>
+        <h4><%= product.name %></h4>
+        <p><%= product.price %></p>
+        <%= image_tag(product.image, class: "product-image") %>
 
+        <%= form_for @order_item do |f| %>
+          <%= f.hidden_field :product_id, value: product.id %>
 
-    </div>
+          <span class="btn btn-default"><%= f.submit "Add to cart" %></span>
+
+        <% end %>
+
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<h3>Orders:</h3>
+
+<% @orders.each do |order| %>
+  <h3>Order Number: <%=order.id %> </h3>
+  <% order.order_items.each do |order_item| %>
+    <p>Product_id: <%= order_item.product_id %></p>
   <% end %>
-</div>
-</div>
+<% end %>

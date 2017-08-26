@@ -1,14 +1,18 @@
 class OrderItemsController < ApplicationController
 
+
+
   def create
+    if session[:order_id]
+      current_order = Order.find(session[:order_id])
+    else
+      current_order = Order.new
+    end
     @order = current_order
     @item = @order.order_items.new(item_params)
     @order.save
     session[:order_id] = @order.id
-    respond_to do |format|
-        format.html { redirect_to products_path }
-        format.js
-      end
+    redirect_to products_path
   end
 
   def update

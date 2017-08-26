@@ -4,11 +4,14 @@ var Products = React.createClass({
       <div>
         {this.props.products.map(function(product){
           return (
-            <div key={product.id}>
-              <Product product = {product}/>
+            <div>
+              <p>{product.name}</p>
+              <ProductForm product = {product}/>
             </div>
           )
         })}
+
+        <h3>Order:</h3>
       </div>
     )
   }

@@ -1,3 +1,16 @@
-<div id="product-container">
-  <%= react_component 'Products', products: @products %>
+<h3>Products</h3>
+
+<div class="row">
+  <div class="section">
+  <% @products.each do |product| %>
+    <div class="col s4">
+
+      <h4><%= product.name %></h4>
+      <p><%= product.price %></p>
+      <%= image_tag(product.image, class: "product-image") %>
+
+
+    </div>
+  <% end %>
+</div>
 </div>

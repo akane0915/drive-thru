@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+- Backend - Rails
+- Front end - React
+
+Includes:
+- React-rails gem
+- Unit testing (rspec)
+- Further exploration
+  - Convert to ES6
+  - Further testing

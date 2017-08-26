@@ -3,8 +3,9 @@ var Product = React.createClass({
     return (
       <div>
         <div className="product">
-          <p> this.props.product.name</p>
+          <p> {this.props.product.name} </p>
         </div>
       </div>
     )
   }
+});

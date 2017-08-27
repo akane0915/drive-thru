@@ -1,11 +1,12 @@
 <h1>Menu</h1>
+<%= link_to "New Order", new_order_path, class: "btn btn-default" %>
 
 <% if @order %>
   <h3>Current Order Number: <%= @order.id %></h3>
 <% else %>
   <p>No current order</p>
 <% end %>
-<%= link_to "New Order", new_order_path, class: "btn btn-default" %>
+
 
 <div class="row">
   <div class="section">

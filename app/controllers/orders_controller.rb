@@ -2,8 +2,10 @@ class OrdersController < ApplicationController
 
   def new
     new_order = Order.new
-    @order = current_order
-    session[:order_id] = @order.id
+    new_order.save
+    current_order = new_order
+    session[:order_id] = new_order.id
+    binding.pry
     redirect_to products_path
   end
 
@@ -22,7 +24,6 @@ class OrdersController < ApplicationController
     new_order.save
     current_order = new_order
     session[:order_id] = new_order.id
-    binding.pry
     redirect_to products_path
   end
 

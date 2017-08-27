@@ -1,45 +1,48 @@
-<h1>Menu</h1>
-<%= link_to "New Order", new_order_path, class: "btn btn-default" %>
+<div class="header-container text-center">
+  <h1 class="header-text">Menu</h1>
+</div>
 
-<% if @order %>
+<div class="order-info-container">
+  <% if @order %>
   <h3>Current Order Number: <%= @order.id %></h3>
-<% else %>
+  <% else %>
   <p>No current order</p>
-<% end %>
+  <% end %>
 
-
-<div class="row">
-  <div class="section">
-    <% @products.each do |product| %>
-      <div class="col-md-4">
-
-        <h4><%= product.name %></h4>
-        <p><%= number_to_currency product.price %></p>
-        <%= image_tag(product.image, class: "product-image") %>
-
-        <%= form_for @order_item do |f| %>
-          <%= f.hidden_field :product_id, value: product.id %>
-          <%= f.number_field :quantity %>
-          <%= f.submit "Add To Order", class: "btn btn-default"%>
-        <% end %>
-
-      </div>
-    <% end %>
-  </div>
+  <%= link_to "New Order", new_order_path, class: "btn btn-default new-order-button" %>
 </div>
 <hr>
 
+<div class="menu-container flex-wrap-container">
+  <% @products.each do |product| %>
+    <div class="menu-item well">
+      <h4><%= product.name %></h4>
+      <p><%= number_to_currency product.price %></p>
+      <%= image_tag(product.image, class: "product-image") %>
 
-<h1>Open Orders:</h1>
+      <%= form_for @order_item do |f| %>
+      <%= f.hidden_field :product_id, value: product.id %>
+      <%= f.number_field :quantity, placeholder: "Quantity"%>
+      <%= f.submit "Add To Order", class: "btn btn-default"%>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<hr>
 
-<% if @open_order_count > 4 %>
-  <h3>Alert: Open orders have exceeded 4!  Let's get cookin'. </h3>
-<% end %>
+<div class="text-center">
+  <h1>Open Orders:</h1>
 
-<div class="row">
+  <% if @open_order_count > 4 %>
+  <h3 class="alert">Alert: Open orders have exceeded 4!  Let's get cookin'. </h3>
+  <% end %>
+</div>
+
+
+<div class="open-orders-container flex-wrap-container">
   <% @orders.each do |order| %>
     <% unless order.status == "Closed" %>
-      <div class="col-md-4">
+      <div class="order-container">
         <div class="well">
           <h3>Order Number: <%=order.id %> </h3>
           <p>Order Status: <%=order.status %></p>
@@ -64,7 +67,7 @@
 </div>
 <hr>
 
-<h1>Closed Orders:</h1>
+<h1 class="text-center">Closed Orders:</h1>
 
 <% @orders.each do |order| %>
   <% if order.status == "Closed" %>

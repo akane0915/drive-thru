@@ -17,6 +17,7 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";
 
+$alert-color: #f31431;
 
 body, html {
   height: 100%;
@@ -34,7 +35,7 @@ body, html {
   text-align: center;
   margin: 0;
 
-  h1{
+  h1 {
     color: white;
     font-family: 'Pacifico', cursive;
     font-size: 6em;
@@ -43,6 +44,29 @@ body, html {
   }
 }
 
+.text-center {
+  text-align: center;
+}
+
+.order-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  #new-order-button{
+    height: fit-content;
+  }
+}
+
+.flex-wrap-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .product-image {
   width: 10em;
+}
+
+.alert {
+  color: $alert-color;
 }

@@ -1,4 +1,11 @@
-<h3>Products</h3>
+<h1>Menu</h1>
+
+<% if @order %>
+  <h3>Current Order Number: <%= @order.id %></h3>
+<% else %>
+  <p>No current order</p>
+<% end %>
+<%= link_to "New Order", new_order_path, class: "btn btn-default" %>
 
 <div class="row">
   <div class="section">
@@ -11,29 +18,35 @@
 
         <%= form_for @order_item do |f| %>
           <%= f.hidden_field :product_id, value: product.id %>
-
-          <span class="btn btn-default"><%= f.submit "Add to cart" %></span>
-
+          <%= f.number_field :quantity %>
+          <%= f.submit "Add to cart", class: "btn btn-default"%>
         <% end %>
 
       </div>
     <% end %>
   </div>
 </div>
+<hr>
 
-<h3>Orders:</h3>
+
+<h1>Open Orders:</h1>
 
 <% @orders.each do |order| %>
-  <h3>Order Number: <%=order.id %> </h3>
+  <div class="well">
+    <% if order.status = "Open" %>
+      <h3>Order Number: <%=order.id %> </h3>
+      <p>Order Status:<%=order.status %></p>
 
-  <% if @order_items.any? %>
-    <% @order_items.each do |item| %>
-      <p><%= item.product.name %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+      <% if @order_items.any? %>
+        <% @order_items.each do |item| %>
+          <p><%= item.quantity %> <%= item.product.name %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+        <% end %>
+      <% else %>
+        <p>This order is empty.</p>
+      <% end %>
+      <%= link_to "Cancel Order", order_path(order), class: "btn btn-default", :data => {:confirm => "You sure?", :method => "delete"} %>
+
+      <%= link_to "Order Complete = Happy Customer", finalize_path(:order_id => order.id), class: "btn btn-default"%>
     <% end %>
-  <% else %>
-    <p>Your shopping cart is empty.</p>
-  <% end %>
-
-
-
+  </div>
 <% end %>

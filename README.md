@@ -1,39 +1,18 @@
-# README
+# Asia's Drive Through
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-- Backend - Rails
-- Front end - React
+- I chose to build the application using Rails and Postgres including using Rails views for the front-end because I wanted to be sure I had an MVP by the deadline.  My intent was to refactor using React for the front-end, but I did not have enough time to do so.  The application includes unit tests using rspec.
 
 Includes:
-- React-rails gem
+- React-Rails gem
 - Unit testing (rspec)
+- Postgres
 
-- Further exploration
+- For further exploration, I plan to incorporate the following:
   - AJAX
-    
+    - Please view this project as an example of my use of AJAX
+      - https://github.com/akane0915/higher-grounds-coffee3
+  - User Integration Testing
   - React and ES6
-    - https://github.com/akane0915/rails-interactive-storybook
-    - https://interactive-storybook.herokuapp.com/
-  - Further testing
+    - Please view this project as an example of my use of React
+      - https://github.com/akane0915/rails-interactive-storybook
+      - https://interactive-storybook.herokuapp.com/

@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :orders
   resources :order_items
 
-  get 'finalize' => 'orders#finalize'
+  post 'finalize' => 'orders#finalize'
 end

@@ -32,5 +32,8 @@ Includes:
 
 - Further exploration
   - AJAX
+    
   - React and ES6
+    - https://github.com/akane0915/rails-interactive-storybook
+    - https://interactive-storybook.herokuapp.com/
   - Further testing

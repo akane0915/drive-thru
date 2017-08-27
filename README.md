@@ -29,6 +29,8 @@ Things you may want to cover:
 Includes:
 - React-rails gem
 - Unit testing (rspec)
+
 - Further exploration
-  - Convert to ES6
+  - AJAX
+  - React and ES6
   - Further testing

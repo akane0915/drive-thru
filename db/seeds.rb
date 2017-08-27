@@ -1,6 +1,7 @@
 class Seed
 
 Product.destroy_all
+Order.destroy_all
 
   def self.begin
     seed = Seed.new
@@ -8,7 +9,7 @@ Product.destroy_all
   end
 
   def generate_products
-    7.times do |i|
+    6.times do |i|
       Product.create!(name: Faker::Food.unique.dish, price: rand(10...100), image: Faker::Avatar.image)
     end
   end

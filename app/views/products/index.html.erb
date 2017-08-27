@@ -20,7 +20,7 @@
         <%= form_for @order_item do |f| %>
           <%= f.hidden_field :product_id, value: product.id %>
           <%= f.number_field :quantity %>
-          <%= f.submit "Add to cart", class: "btn btn-default"%>
+          <%= f.submit "Add To Order", class: "btn btn-default"%>
         <% end %>
 
       </div>
@@ -31,6 +31,10 @@
 
 
 <h1>Open Orders:</h1>
+
+<% if @open_order_count > 4 %>
+  <h3>Alert: Open orders have exceeded 4!  Let's get cookin'. </h3>
+<% end %>
 
 <div class="row">
   <% @orders.each do |order| %>

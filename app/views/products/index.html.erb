@@ -40,15 +40,15 @@
           <h3>Order Number: <%=order.id %> </h3>
           <p>Order Status: <%=order.status %></p>
 
-          <% if @order_items.any? %>
-            <% @order_items.each do |item| %>
+          <% if order.order_items.any? %>
+            <% order.order_items.each do |item| %>
             <p><%= item.quantity %> <%= item.product.name %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
             <% end %>
           <% else %>
           <p>This order is empty.</p>
           <% end %>
 
-          <%= link_to "Cancel Order", order_path(order), class: "btn btn-default", :data => {:confirm => "You sure?", :method => "delete"} %>
+          <%= link_to "Cancel Order", order_path(order, :order_id => order.id), class: "btn btn-default", :data => {:confirm => "You sure?", :method => "delete"} %>
 
           <%= link_to "Order Complete", finalize_path(:order_id => order.id), class: "btn btn-default", :data => {:method => "finalize"}%>
         </div>

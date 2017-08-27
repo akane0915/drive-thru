@@ -56,3 +56,14 @@
     <% end %>
   <% end %>
 </div>
+<hr>
+
+<h1>Closed Orders:</h1>
+
+<% @orders.each do |order| %>
+  <% if order.status == "Closed" %>
+    <ul>
+      <li>Order <%= order.id %></li>
+    </ul>
+  <% end %>
+<% end %>

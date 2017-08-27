@@ -52,6 +52,8 @@
           <p>This order is empty.</p>
           <% end %>
 
+          <%= link_to "Edit Order", edit_order_path(order, :order_id => order.id), class: "btn btn-default"%>
+
           <%= link_to "Cancel Order", order_path(order, :order_id => order.id), class: "btn btn-default", :data => {:confirm => "You sure?", :method => "delete"} %>
 
           <%= link_to "Order Complete", finalize_path(:order_id => order.id), class: "btn btn-default", :data => {:method => "finalize"}%>

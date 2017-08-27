@@ -8,6 +8,13 @@ class OrdersController < ApplicationController
     redirect_to products_path
   end
 
+  def edit
+    @order = Order.find(params[:order_id])
+    session[:order_id] = @order.id
+    current_order = @order
+    redirect_to products_path
+  end
+
   def destroy
     @order = Order.find(params[:order_id])
     @order.destroy

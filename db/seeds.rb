@@ -9,7 +9,7 @@ Order.destroy_all
   end
 
   def generate_products
-    6.times do |i|
+    8.times do |i|
       Product.create!(name: Faker::Food.unique.dish, price: rand(10...100), image: Faker::Avatar.image)
     end
   end

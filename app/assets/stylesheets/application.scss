@@ -18,11 +18,13 @@
   @import "bootstrap";
 
 $alert-color: #f31431;
+$body-font:'Slabo 27px', serif;
+$header-font: 'Pacifico', cursive;
 
 body, html {
   height: 100%;
   margin: 0;
-  font-family: 'Slabo 27px', serif;
+  font-family: $body-font;
 }
 
 .jumbotron {
@@ -48,10 +50,16 @@ body, html {
   text-align: center;
 }
 
+.slogan {
+  font-family: $header-font;
+  padding: 1em 0;
+}
+
 .order-info-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   #new-order-button{
     height: fit-content;
   }

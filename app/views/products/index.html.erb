@@ -1,4 +1,5 @@
 <div class="header-container text-center">
+  <h1 class="slogan">It's Not Your Average Drive Thru</h1>
   <h1 class="header-text">Menu</h1>
 </div>
 
@@ -49,7 +50,7 @@
 
           <% if order.order_items.any? %>
             <% order.order_items.each do |item| %>
-            <p><%= item.quantity %> <%= item.product.name %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+            <p><%= item.quantity %> <%= item.product.name %> | <%= link_to "Delete", order_item_path(item, :order_id => order.id), :data => {:confirm => "You sure?", :method => "delete"} %></p>
             <% end %>
           <% else %>
           <p>This order is empty.</p>

@@ -9,7 +9,7 @@ class OrderItemsController < ApplicationController
   end
 
   def destroy
-    @order = current_order
+    @order = Order.find(params[:order_id])
     @item = @order.order_items.find(params[:id])
     @item.destroy
     @order.save

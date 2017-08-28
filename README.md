@@ -1,5 +1,7 @@
 # Asia's Drive Through
 
+## View Project at: https://fierce-headland-31121.herokuapp.com/products
+
 ## This is an application for a drive thru employee to manage orders.
 
 #### By _**Asia Kane**_
@@ -10,6 +12,10 @@ Note: I chose to build the application using Rails and Postgres including using 
 - Ruby on Rails
 - Rspec
 - Postgres
+
+![1](./app/assets/images/ss1.png)
+![2](./app/assets/images/ss2.png)
+![3](./app/assets/images/ss3.png)
 
 ## Application Includes:
 

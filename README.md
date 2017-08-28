@@ -35,6 +35,10 @@ For further exploration, I plan to incorporate the following:
     - Please view this project as an example of my use of React
       - https://github.com/akane0915/rails-interactive-storybook
       - https://interactive-storybook.herokuapp.com/
+  - Additional JavaScript functionality
+  - Please view this project as an example of my use of JS and jQuery
+    - http://www.tomkaneart.com
+    - https://github.com/akane0915/tom-kane-art-website
 
 ## Installation
 

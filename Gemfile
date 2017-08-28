@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'react-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,7 +46,7 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'shoulda-matchers'
-  gem 'faker'
+
 end
 
 group :development do
